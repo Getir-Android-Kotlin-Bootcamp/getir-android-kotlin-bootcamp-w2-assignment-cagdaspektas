@@ -24,7 +24,7 @@ import com.google.android.libraries.places.api.model.Place
 import com.google.android.libraries.places.widget.AutocompleteSupportFragment
 import com.google.android.libraries.places.widget.listener.PlaceSelectionListener
 import java.util.Locale
-
+//todo sayın asistanlar için bilgilendirme kısımlarına todo bırakıyorum
 
 class MapsActivity : FragmentActivity(), OnMapReadyCallback {
 
@@ -35,8 +35,8 @@ class MapsActivity : FragmentActivity(), OnMapReadyCallback {
     //todo zoom seviyesi 15 f sokak görünümüdür.
     val zoomLevel = 15f
 
-    //todo sayın asistanlar için bilgilendirme kısımlarına todo bırakıyorum here we assign our icon to marker (we did it because marker icon needs to be a bitmap but our icon is svg)
-    private val bicycleIcon: BitmapDescriptor by lazy {
+    //todo iconu bitmape çeviriyoruz çünkü map bunu istiyor
+        private val bicycleIcon: BitmapDescriptor by lazy {
         BitmapHelper.vectorToBitmap(this, R.drawable.pin_radar)
     }
 
@@ -47,7 +47,7 @@ class MapsActivity : FragmentActivity(), OnMapReadyCallback {
         binding = ActivityMapsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
+        //todo map hazır olduğunda burası çalışıyor
       val mapFragment = supportFragmentManager
             .findFragmentById(R.id.map_Fragment) as SupportMapFragment
         mapFragment.getMapAsync(this)
@@ -60,7 +60,8 @@ class MapsActivity : FragmentActivity(), OnMapReadyCallback {
             supportFragmentManager.findFragmentById(R.id.place_autocomplete_fragment)
                     as AutocompleteSupportFragment
 
-        autocompleteFragment.setPlaceFields(listOf(Place.Field.ID, Place.Field.NAME,Place.Field.LAT_LNG))
+            // todo bu kısımda fragmentı özelleştiriyoruz maple ilgili kısım burası
+        autocompleteFragment.setPlaceFields(listOf( Place.Field.NAME,Place.Field.LAT_LNG))
         autocompleteFragment.setHint("Where is your location?")
         autocompleteFragment.setOnPlaceSelectedListener(object : PlaceSelectionListener {
             override fun onPlaceSelected(place: Place) {
