@@ -1,0 +1,15 @@
+<resources>
+    <style name="CustomAutocompleteStyle" parent="Widget.AppCompat.AutoCompleteTextView">
+        <!-- Arka plan rengi -->
+        <item name="android:background">#FFF0F0</item>
+        <!-- Yazı rengi -->
+        <item name="android:textColor">@android:color/black</item>
+        <!-- Yazı boyutu -->
+        <item name="android:textSize">16sp</item>
+        <!-- Padding ayarları -->
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <!-- Giriş alanındaki sol drawable (arama simgesi) -->
+        <item name="android:drawableStart">@drawable/search</item>
+    </style>
+</resources>
